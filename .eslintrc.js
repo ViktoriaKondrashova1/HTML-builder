@@ -15,5 +15,8 @@ module.exports = {
     semi: ['error', 'always'],
     'prettier/prettier': 'error',
   },
+  parserOptions: {
+    sourceType: 'module',
+  },
   ignorePatterns: ['03-files-in-folder/secret-folder/**/*.js'],
 };
