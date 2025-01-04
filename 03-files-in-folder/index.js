@@ -9,11 +9,11 @@ fsPromises.readdir(dir, { withFileTypes: true }).then((files) => {
       const extention = path.extname(file.name);
       const name = path.basename(file.name, extention);
 
-      async function getStats() {
+      const getStats = async () => {
         const fileDir = path.join(dir, file.name);
         const stat = await fsPromises.stat(fileDir);
         return stat.size / 1024 + 'kb';
-      }
+      };
 
       getStats().then((size) => {
         const fileInfo = `${name} - ${extention.slice(1)} - ${size}`;
